@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Star Rating System with Comments</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+	<style>
+		.star-rating {
+			display: inline-block;
+			font-size: 0;
+			white-space: nowrap;
+			margin: 0;
+			padding: 0;
+			cursor: pointer;
+		}
+
+		.star-rating > input {
+			display: none;
+		}
+
+		.star-rating > label {
+			position: relative;
+			display: inline-block;
+			font-size: 2rem;
+			color: #bbb;
+			margin: 0;
+			padding: 0;
+			cursor: pointer;
+		}
+
+		.star-rating > label:before {
+			content: "\2605";
+			position: absolute;
+			left: 0;
+			top: 0;
+			color: #ffa600;
+			transition: color 200ms;
+		}
+
+		.star-rating > label:hover:before,
+		.star-rating > label:hover ~ label:before,
+		.star-rating > input:checked ~ label:before {
+			color: #ffbb00;
+		}
+
+		.star-rating.active > label:before {
+			color: #ffbb00;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+				<h1 class="text-center">Star Rating System with Comments</h1>
+				<p class="text-center">Please rate this product:</p>
+				<div class="text-center">
+					<div class="star-rating">
+						<input type="radio" id="star-5" name="rating" value="5" onclick="setRating(5)">
+						<label for="star-5" class="star-rating-5"></label>
+						<input type="radio" id="star-4" name="rating" value="4" onclick="setRating(4)">
+						<label for="star-4" class="star-rating-4"></label>
+						<input type="radio" id="star-3" name="rating" value="3" onclick="setRating(3)">
+						<label for="star-3" class="star-rating-3"></label>
+						<input type="radio" id="star-2" name="rating" value="2" onclick="setRating(2)">
+						<label for="star-2" class="star-rating-2"></label>
+						<input type="radio" id="star-1" name="rating" value="1" onclick="setRating(1)">
+						<label for="star-1" class="star-rating-1"></label>
+					</div>
+				</div>
+				<div class="mt-4">
+					<h3>Comments:</h3>
+					<form>
+						<div class="form-group">
+							<label for="name">Name:</label>
+							<input type="text" class="form-control" id="name" placeholder="Enter your name">
+						</div>
+						<div class="form-group">
+							<label for="comment">Comment:</label>
+							<textarea class="form-control" id="comment" rows="3"></textarea>
+						</div>
+						<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script>
+	function setRating(rating) {
+		var stars = document.getElementsByClassName('star-rating')[0].children;
+		for (var i = 0; i < stars.length; i++) {
+			stars[i].classList.remove('active');
+		}
+		for (var i = 0; i < rating; i++) {
+			stars[i].classList.add('active');
+		}
+	}
+</script>
+                        

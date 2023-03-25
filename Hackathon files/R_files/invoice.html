@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Invoice</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<!-- Custom CSS -->
+	<style>
+		body {
+			background-color: #f7f7f7;
+			font-family: Arial, sans-serif;
+		}
+		.container {
+			background-color: #fff;
+			padding: 30px;
+			border-radius: 5px;
+			box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+			margin-top: 50px;
+            margin-bottom: 10%;
+		}
+		h1, h2, h3, h4, h5, h6 {
+			font-family: Georgia, serif;
+			font-weight: bold;
+			margin-top: 0;
+		}
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-bottom: 20px;
+		}
+		table th, table td {
+			padding: 10px;
+			border: 1px solid #ddd;
+		}
+		.btn {
+			background-color: #007bff;
+			color: #fff;
+			border-radius: 0;
+			border: none;
+			padding: 10px 20px;
+			font-weight: bold;
+			text-transform: uppercase;
+			transition: all 0.3s ease-in-out;
+			margin-top: 20px;
+			cursor: pointer;
+		}
+		.btn:hover {
+			background-color: #0062cc;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container" >
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h1>Invoice</h1>
+				<p class="lead mb-4">Date: [insert date here]</p>
+				<p class="lead mb-4">Invoice Number: [insert invoice number here]</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<h3>Farmer Information</h3>
+				<p class="mb-2"><strong>[insert farmer's name]</strong></p>
+				<p class="mb-2">[insert farmer's address]</p>
+				<p class="mb-2">[insert farmer's phone number]</p>
+			</div>
+			<div class="col-md-6">
+				<h3>Buyer Information</h3>
+				<p class="mb-2"><strong>[insert buyer's name]</strong></p>
+				<p class="mb-2">[insert buyer's address]</p>
+				<p class="mb-2">[insert buyer's phone number]</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h3>Product Information</h3>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Product Name</th>
+							<th>Quantity</th>
+							<th>Price per unit</th>
+							<th>Total Price</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+                            <td>[Insert Product Name]</td>
+                            <td>[insert quantity]</td>
+						<td>[insert price per unit]</td>
+						<td>[insert total price]</td>
+					</tr>
+					<!-- Add more rows as needed -->
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<h3>Payment Details</h3>
+			<p class="mb-2"><strong>Payment Method:</strong> [insert payment method]</p>
+			<p class="mb-2"><strong>Total Amount Due:</strong> [insert total amount due]</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<a href="#" class="btn btn-lg">Pay Now</a>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
