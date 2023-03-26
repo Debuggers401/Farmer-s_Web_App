@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>E-Farm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ebe8ff;
+}
+
+.cart-button {
+  position: relative;
+  padding: 10px;
+  width: 150px;
+  height: 50px;
+  border: 0.2px solid black;
+  border-radius: 10px;
+  background-color: white;
+  outline: none;
+  cursor: pointer;
+  margin: 0 10px;
+  color: black;
+  transition: 0.3s ease-in-out;
+  overflow: hidden;
+   user-select: none; 
+}
+
+.cart-button:hover {
+  background-color: whitesmoke;
+}
+.cart-button:active {
+  transform: scale(0.9);
+}
+
+.cart-button .fa-shopping-cart {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: -10%;
+  font-size: 2em;
+  transform: translate(-50%, -50%);
+}
+
+.cart-button span {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  font-size: 1.2em;
+  color: black;
+  transform: translate(-50%, -50%);
+}
+.cart-button span.add-to-cart {
+  opacity: 1;
+}
+.cart-button span.added {
+  opacity: 0;
+}
+
+.cart-button.clicked .fa-shopping-cart {
+  animation: cart 1.5s ease-in-out forwards;
+}
+
+.cart-button.clicked span.add-to-cart {
+  animation: txt1 1.5s ease-in-out forwards;
+}
+.cart-button.clicked span.added {
+  animation: txt2 1.5s ease-in-out forwards;
+}
+@keyframes cart {
+  0% {
+    left: -10%;
+  }
+  40%,
+  60% {
+    left: 50%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+
+@keyframes txt1 {
+  0% {
+    opacity: 1;
+  }
+  20%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes txt2 {
+  0%,
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+        .con{
+          height:580px;
+          width:500px;
+          border:10px;
+          border-color: red;
+          border-radius: 10%;
+          background-color:black;
+          border: 2px lightgray solid;
+        }
+        
+      .wow{
+          height:300px;
+          width:500px;
+          }
+      .r1{
+          display: flex;
+              align-content: center;
+              justify-content: center;
+              margin-top:0.6rem;
+              font-size:25px;
+              color: white;
+          }
+          .checked {
+                color: orange;
+              
+          }	
+          .r{
+              display: flex;
+              align-content: center;
+              justify-content: center;
+              margin-top:2rem;
+              color: white;
+              
+          }
+          .m1{
+              height: 100px;
+              width:500px;
+              border-bottom-left-radius: 50px;
+              border-bottom-right-radius:50px;
+              margin-top: 2rem;
+              filter: invert(100%);
+          }
+          .f{
+              float: right;
+          }
+          .al{
+              margin-top: 4%;
+          }
+      </style>
+  </head>
+  <body>
+   
+      <div class="container">
+        <div class="row">
+         <div class="col">
+          <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/">E-Farm</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  
+                  <li class="nav-item dropdown">
+                    <a class="nav-link active nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Farmer
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="/farmer-login/">Login</a></li>
+                      <li><a class="dropdown-item" href="/farmer-registration">Registration</a></li>
+                      <li><a class="dropdown-item" href="/add-product/">Add Product</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link active nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Consumer
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="/user-login/">Login</a></li>
+                      <li><a class="dropdown-item" href="/user-registration/">Registration</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/about-us/">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/contact-us/">Contact Us</a>
+                  </li>
+                  </ul>
+                  
+                  <div class="d-sm-flex text-end">
+                    <h5 class=" navbar-brand text-end">Welcome {{user.Fname}}</h5>
+                    <ul class="navbar-nav me-0 mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <img src="/static/media/logo.png" class="rounded-circle" alt="user png"  style="width:5%;">
+                          </a>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">My Orders</a></li>
+                            <li><a class="dropdown-item" href="/cart/">Cart</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  
+                <!-- <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form> -->
+              </div>
+            </div>
+          </nav>
+         </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            {% block body %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <div class="container p-2">
+        <div class="row  grid gap-3 mt-3">
+          {% for i in p %}
+            <div class="col border border-2 p-0 rounded-3"> 
+              
+                <div class="card" style="width: 100%;">
+                  
+                    <div class="card-body">
+                      <img src="{{i.pimage}}" class="card-img-top" alt="">
+                      <h5 class="card-title">Name : {{i.pname}}</h5>
+                      <h5 class="card-title">Price : {{i.pprice}}</h5>
+                    <h5 class="card-title">Quantity : {{i.pquantity}} unit</h5>
+                        <p class="card-text">
+                            <div>
+                                <strong>Rating:</strong>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star  checked"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                        </p>
+                          
+                          <button class="cart-button" onclick="add()">
+                            <span class="add-to-cart" >Add to cart</span>
+                            <span class="added"></span>
+                            <i class="fa fa-shopping-cart"></i>
+                          </button>
+                         
+                          <div class="card-img-bot mt-3"></div>
+                    </div>
+                    <script>
+      
+
+                      var cartButtons = document.querySelectorAll('.cart-button');
+                      var card_value = document.querySelector(".added");
+                      var pqtplus = document.querySelector(".pqt-plus");
+                      var pqtminus = document.querySelector(".pqt-minus");
+                      var cartvalue = 0;
+                      
+                      cartButtons.forEach(button => {
+                        button.addEventListener('click', cartClick);
+                      });
+                      function cartClick() {
+                        let button = this;
+                        button.classList.add('clicked');
+                          card_value.textContent = cartvalue += 1;
+                      }
+                      
+                      pqtplus.addEventListener('click', function(){
+                          if(card_value.nodeValue <= 0){
+                           card_value.textContent = cartvalue +=1;
+                          }
+                      });
+                      
+                      pqtminus.addEventListener('click', function(){
+                          if(Number(card_value.innerText) - 1 >= 0){
+                              card_value.textContent = cartvalue -=1;
+                      }
+                      });
+                      
+                          </script>
+                    
+                  
+            </div>
+          </div>
+          {% endfor %}
+          </div>
+        </div>
+    </div>
+    {% endblock body %}
+          </div>
+        </div>
+      </div>
+    
+    
+  </body>
+</html>
